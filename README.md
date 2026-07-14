@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Auto^6ML is an open-source Jittor-based library for machine learning automation.
+Auto^6ML is an open-source library for machine learning automation, based
+entirely on the [Jittor platform](https://github.com/Jittor/jittor).
 The project aims to integrate a series of auto-adaptive and meta-learning
 algorithms into a unified platform, so that users can select datasets, choose an
 automation scenario, and run the corresponding algorithm pipeline.
