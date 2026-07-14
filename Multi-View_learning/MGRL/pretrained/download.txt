@@ -1,0 +1,1 @@
+hf download Junc1i/MGRL_pretrained

@@ -1,0 +1,93 @@
+DEFAULT: &DEFAULT
+  black_list: [1,2,0]
+  num_gpus_total: 4
+  num_gpus_to_use: 1
+  heads: 8
+  edge_sampling_ratio: 0.9
+  seed: 0
+  verbose: 2
+  save_model: False
+  save_plot: False
+  val_interval: 1
+
+SHG: &SHG
+  model_name: SHG
+  <<: *DEFAULT
+
+SHG-dblp-Node: &SHG-dblp-Node
+  <<: *SHG
+#deco
+  nb_epochs: 500
+  cfg: [64, 32]
+  deg_dim: 16
+  alpha: 20
+  lambdintra: [0.001, 0.001, 0.001]
+  fusionintra: 0
+  edge_rate: 0.95
+  adj_weight: 0.05
+  con: 10
+  positive_rate: 0.2
+  std_w: 0
+
+# vic
+#  nb_epochs: 800
+#  cfg: [64, 16]
+#  deg_dim: 16
+#  alpha: 1
+#  lambdintra: [0.001, 0.001, 0.001]
+#  fusionintra: 1
+#  edge_rate: 0.95
+#  adj_weight: 0.05
+#  con: 10
+#  positive_rate: 0.2
+
+
+SHG-acm-Node: &SHG-acm-Node
+  <<: *SHG
+#deco
+#  nb_epochs: 2000
+#  cfg: [128, 64]
+#  deg_dim: 16
+#  lambdintra: [0.001, 0.001]
+#  fusionintra: 0.05
+#  alpha: 5
+#  edge_rate: 0.96
+#  con: 0.1
+#  positive_rate: 0.2
+
+#vic
+  nb_epochs: 2000
+  cfg: [64, 256]
+  deg_dim: 16
+  lambdintra: [0.01, 0.01]
+  fusionintra: 0
+  alpha: 5
+  edge_rate: 0.96
+  adj_weight: 0.05
+  con: 1
+  positive_rate: 0.2
+  std_w: 1
+
+SHG-imdb-Node: &SHG-imdb-Node
+  <<: *SHG
+  nb_epochs: 4000
+  cfg: [128, 32]
+  deg_dim: 16
+  alpha: 0.1
+  lambdintra: [0.05, 0.05]
+  fusionintra: 1
+  edge_rate: 0.95
+  con: 1
+  beta: 0.1
+
+SHG-amazon-Node: &SHG-amazon-Node
+  <<: *SHG
+  sc: 5
+  nb_epochs: 600
+  cfg: [32, 256]
+  lambdintra: [0.0005, 0.05, 0.0005]
+  alpha: 0.1
+  beta: 0.0005
+
+
+
