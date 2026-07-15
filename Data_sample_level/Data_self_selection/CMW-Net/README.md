@@ -43,6 +43,16 @@ and inter-class variations of data bias situations. To address this issue, we pr
 * Torchvision >= 0.4.0
 * sklearn
 * torchnet
+
+### Jittor Migration (Phased)
+
+To start migrating CMW-Net to Jittor, we provide a first runnable sample in:
+
+- `/home/runner/work/Auto-6ML/Auto-6ML/Data_sample_level/Data_self_selection/CMW-Net/jittor_port`
+
+This phase includes a Jittor implementation of the CMW-Net meta-weight module (`VNet`) and a sanity-check training script. See:
+
+- `/home/runner/work/Auto-6ML/Auto-6ML/Data_sample_level/Data_self_selection/CMW-Net/jittor_port/README.md`
     
 ## Experiments
 Synthetic and real data experiments substantiate the capability of our method on achieving proper weighting schemes in various data bias cases. The task-transferability of the learned weighting scheme is also substantiated. A performance gain can be readily achieved
@@ -1238,6 +1248,5 @@ We appreciate the following github repos for their valuable codebase:
 - https://github.com/pxiangwu/PLC
 - https://github.com/NUST-Machine-Intelligence-Laboratory/weblyFG-dataset
 - https://github.com/Lvcrezia77/PRODEN
-
 
 
