@@ -54,6 +54,7 @@ This migration starter currently includes:
 
 - phase-1: Jittor implementation of the CMW-Net meta-weight module (`VNet`)
 - phase-2: Jittor training helpers and a `train_CE`-style demo loop on synthetic `(inputs, targets, index)` batches
+- phase-3: Jittor warmup + VNet-weighted meta-training demo on synthetic train/meta batches
 
 See:
 
@@ -1253,4 +1254,3 @@ We appreciate the following github repos for their valuable codebase:
 - https://github.com/pxiangwu/PLC
 - https://github.com/NUST-Machine-Intelligence-Laboratory/weblyFG-dataset
 - https://github.com/Lvcrezia77/PRODEN
-
