@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto^6ML Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Jittor Algorithm Platform Demo</p>
+          <h1>Auto^6ML 机器学习自动化平台</h1>
+        </div>
+        <div class="topbar-meta">
+          <span id="algorithm-count">18 algorithms</span>
+          <span>Static Web Demo</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="control-panel" aria-label="演示配置">
+          <section class="panel-section">
+            <div class="section-heading">
+              <span class="step-index">01</span>
+              <h2>输入数据集</h2>
+            </div>
+            <label class="field-label" for="dataset-select">Dataset</label>
+            <select id="dataset-select"></select>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-heading">
+              <span class="step-index">02</span>
+              <h2>选择模型</h2>
+            </div>
+            <label class="field-label" for="model-select">Model / Backbone</label>
+            <select id="model-select"></select>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-heading">
+              <span class="step-index">03</span>
+              <h2>选择技术路线</h2>
+            </div>
+            <div class="segmented" id="route-tabs" role="tablist" aria-label="技术路线"></div>
+          </section>
+
+          <section class="panel-section compact">
+            <div class="section-heading">
+              <span class="step-index">04</span>
+              <h2>平台状态</h2>
+            </div>
+            <dl class="status-list">
+              <div>
+                <dt>当前层级</dt>
+                <dd id="current-level">数据样本层面</dd>
+              </div>
+              <div>
+                <dt>查看方向</dt>
+                <dd id="current-category">样本自选择</dd>
+              </div>
+              <div>
+                <dt>当前模型</dt>
+                <dd id="current-model">ResNet-18</dd>
+              </div>
+              <div>
+                <dt>已选算法</dt>
+                <dd id="current-count">0</dd>
+              </div>
+            </dl>
+          </section>
+        </aside>
+
+        <section class="main-stage" aria-label="自动化流程">
+          <div class="stage-header">
+            <div>
+              <p class="eyebrow">Machine Learning Automation</p>
+              <h2>三层级六方向算法入口</h2>
+            </div>
+            <button class="ghost-button" id="reset-button" type="button">重置筛选</button>
+          </div>
+
+          <div class="automation-map" id="automation-map"></div>
+
+          <div class="algorithm-grid-header">
+            <h2>三层已选算法</h2>
+            <p id="grid-hint">每个层级可以独立选择一个算法。</p>
+          </div>
+          <div class="algorithm-grid" id="algorithm-grid"></div>
+        </section>
+
+        <aside class="detail-panel" aria-label="训练任务控制台">
+          <section class="detail-card training-card">
+            <div class="training-title-row">
+              <div>
+                <div class="detail-kicker">Training Pipeline</div>
+                <h2>模型训练流程</h2>
+              </div>
+              <span class="job-badge" id="job-status">Idle</span>
+            </div>
+            <p id="job-description"></p>
+            <div class="training-actions">
+              <button class="primary-button" id="start-training" type="button">启动训练</button>
+              <button class="ghost-button" id="stop-training" type="button">停止任务</button>
+              <button class="ghost-button" id="reset-training" type="button">重置任务</button>
+            </div>
+          </section>
+
+          <section class="detail-card">
+            <h3>任务配置</h3>
+            <div class="job-config-grid" id="job-config"></div>
+          </section>
+
+          <section class="detail-card">
+            <h3>训练阶段</h3>
+            <div class="stage-list" id="training-stages"></div>
+          </section>
+
+          <section class="detail-card">
+            <h3>训练指标</h3>
+            <div class="training-metrics" id="training-metrics"></div>
+          </section>
+
+          <section class="detail-card log-card">
+            <div class="log-header">
+              <h3>任务日志</h3>
+              <span id="job-id">No job</span>
+            </div>
+            <div class="training-log" id="training-log"></div>
+          </section>
+
+          <section class="detail-card">
+            <h3>平台输出</h3>
+            <div class="artifact-list" id="artifact-list"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
