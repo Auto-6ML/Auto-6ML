@@ -50,7 +50,12 @@ To start migrating CMW-Net to Jittor, we provide a first runnable sample in:
 
 - `/home/runner/work/Auto-6ML/Auto-6ML/Data_sample_level/Data_self_selection/CMW-Net/jittor_port`
 
-This phase includes a Jittor implementation of the CMW-Net meta-weight module (`VNet`) and a sanity-check training script. See:
+This migration starter currently includes:
+
+- phase-1: Jittor implementation of the CMW-Net meta-weight module (`VNet`)
+- phase-2: Jittor training helpers and a `train_CE`-style demo loop on synthetic `(inputs, targets, index)` batches
+
+See:
 
 - `/home/runner/work/Auto-6ML/Auto-6ML/Data_sample_level/Data_self_selection/CMW-Net/jittor_port/README.md`
     
@@ -1248,5 +1253,4 @@ We appreciate the following github repos for their valuable codebase:
 - https://github.com/pxiangwu/PLC
 - https://github.com/NUST-Machine-Intelligence-Laboratory/weblyFG-dataset
 - https://github.com/Lvcrezia77/PRODEN
-
 
